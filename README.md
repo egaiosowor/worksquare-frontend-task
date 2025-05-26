@@ -1,56 +1,54 @@
-# WorkSquare Senior Frontend Vetting Task
+# React + TypeScript + Vite
 
-Welcome! This vetting task is designed to assess your ability to build clean, responsive frontend interfaces and follow modern development practices.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## Objective
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Build a housing listings interface using a frontend framework of your choice.
+## Expanding the ESLint configuration
 
-### Supported Stacks:
-- React 
-- Vue.js
-- Angular
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
----
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-## Requirements
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-- Load listing data from a `listings.json` file (provided separately via email)
-- Display listings in a responsive layout
-- Implement filter/search by **location** or **property type**
-- Use functional components & Hooks (if using React)
-- Use Tailwind CSS, CSS Modules, or any modern styling method
-- Add basic UI animations
-- Show **loading** and **empty** states
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
----
-
-## What We’re Looking For
-
-- Clean, modular, and maintainable code
-- Responsive design
-- Clear Git history with meaningful commits
-- Organized project structure
-- Thoughtful UX/UI decisions
-
----
-
-## Submission
-
-1. **Fork** this repo
-2. Setup your frontend project inside the fork (no starter files are provided)
-3. Commit your code with meaningful messages
-4. Push to your forked repo
-5. Send your repo and hosted link via email
-
-🕒 **Deadline**: 72 hours after receiving this task
-
----
-
-## Note
-
-You’ll receive the `listings.json` data separately. Please create a file in your project and paste the data to use it locally.
-
-
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
