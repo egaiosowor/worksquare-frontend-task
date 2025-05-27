@@ -1,6 +1,6 @@
 import type { Listing } from "@/types";
 import { ArrowRight, BedDouble, Bath, MapPin } from "lucide-react";
-import Pill from "./ui/Pill";
+import Pill from "./Pill";
 
 export default function ListingCard({
   price,

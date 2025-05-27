@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NAV_ITEMS } from "@/constants";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../ui/Logo";
+import Logo from "../Logo";
 import { Menu, X } from "lucide-react";
 export default function Navbar() {
   const { pathname } = useLocation();
