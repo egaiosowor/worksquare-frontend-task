@@ -10,3 +10,9 @@ export type Listing = {
 };
 
 export type ListingFilter = "buy" | "rent" | "lease" | "all";
+
+export type SearchFormData = {
+  propertyType: string;
+  location: string;
+  priceRange: number[] | undefined;
+};

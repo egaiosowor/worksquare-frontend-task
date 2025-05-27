@@ -44,7 +44,7 @@ export default function Pagination({
       <button
         disabled={current === 1}
         onClick={() => onPageChange(current - 1)}
-        className="p-2 rounded bg-gray-100 text-primary/90 disabled:opacity-50"
+        className="p-2 rounded bg-gray-100 text-primary/90 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
       >
         <ChevronLeft size={16} />
       </button>
@@ -54,7 +54,7 @@ export default function Pagination({
           <button
             key={i}
             onClick={() => onPageChange(page)}
-            className={`px-3 py-1 rounded ${
+            className={`px-3 py-1 rounded cursor-pointer ${
               current === page
                 ? "bg-accent text-white"
                 : "bg-gray-100 text-primary"
@@ -72,7 +72,7 @@ export default function Pagination({
       <button
         disabled={current === total}
         onClick={() => onPageChange(current + 1)}
-        className="p-2 rounded bg-gray-100 text-primary/90 disabled:opacity-50"
+        className="p-2 rounded bg-gray-100 text-primary/90 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
       >
         <ChevronRight size={16} />
       </button>
@@ -80,7 +80,7 @@ export default function Pagination({
       <button
         onClick={() => onPageChange(total)}
         disabled={current === total}
-        className="p-2 rounded bg-gray-100 text-primary/90 disabled:opacity-50"
+        className="p-2 rounded bg-gray-100 text-primary/90 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
       >
         <ChevronsRight size={16} />
       </button>

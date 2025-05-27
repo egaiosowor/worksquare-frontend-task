@@ -16,8 +16,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="p-4 sm:p-6 lg:px-8 relative w-full bg-no-repeat bg-cover bg-center bg-[url('/src/assets/media/hero-bg.png')]">
-      <nav className="flex items-center justify-between max-w-7xl mx-auto">
+    <header className="relative w-full bg-no-repeat bg-cover bg-center bg-[url('/src/assets/media/hero-bg.png')]">
+      <nav className="p-4 sm:py-6 flex items-center justify-between max-w-7xl mx-auto">
         {" "}
         <Logo />
         <ul className="py-4 px-8 hidden md:flex items-center gap-10 bg-white rounded-full shadow-sm">

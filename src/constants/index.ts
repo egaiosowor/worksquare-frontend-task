@@ -60,3 +60,38 @@ export const FOOTER_LINKS = [
     ],
   },
 ];
+
+export const propertyOptions = [
+  {
+    value: "house",
+    label: "House",
+  },
+  {
+    value: "flat",
+    label: "Flat",
+  },
+  {
+    value: "terrace",
+    label: "Terrace",
+  },
+  {
+    value: "penthouse",
+    label: "Penthouse",
+  },
+  {
+    value: "duplex",
+    label: "Duplex",
+  },
+  {
+    value: "shortLet",
+    label: "Short Let",
+  },
+  {
+    value: "apartment",
+    label: "Apartment",
+  },
+  {
+    value: "mansion",
+    label: "Mansion",
+  },
+];

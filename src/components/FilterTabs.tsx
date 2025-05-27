@@ -21,7 +21,7 @@ export default function FilterTabs({
         <button
           key={opt}
           onClick={() => handleClick(opt)}
-          className={`py-1 px-3  sm:px-7 sm:py-2 rounded-full transition-colors capitalize font-medium ${
+          className={`py-2 px-4 sm:px-7 rounded-full transition-colors capitalize font-medium cursor-pointer ${
             active === opt
               ? "bg-white text-accent"
               : "text-white hover:bg-accent/90"
