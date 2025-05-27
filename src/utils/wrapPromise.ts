@@ -1,6 +1,7 @@
 export function wrapPromise<T>(promise: Promise<T>) {
   let status = "pending";
   let result: T;
+  // eslint-disable-next-line prefer-const
   let suspender = promise.then(
     (r) => {
       status = "success";
