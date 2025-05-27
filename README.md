@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# Real Estate Listings App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript app for browsing property listings with advanced filtering, search, and pagination, powered by URL-based state management.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Property Listings:** Responsive display of property cards with mock data.
+- **Filtering:** Dynamic filters for rent, lease, buy, or all.
+- **Search:** Search by property type, location, and price range.
+- **Pagination:** Paginated listings for easy navigation.
+- **URL State:** Filter, search, and pagination states are synced to the URL for shareable links and browser navigation.
+- **Reset Filters:** Easily reset all filters to default.
+- **React Suspense:** Loading state management for listings section.
+- **Newsletter Subscription:** Section to subscribe to newsletters.
+- **UI Layout:** Site-wide navbar and footer with responsive styling.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+
+### Installation
+
+```bash
+npm install
+
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The app will run locally, usually at http://localhost:5173/
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## Project Structure
+
+- `src/hooks` — Custom reusable hooks for filtering, search params, and pagination logic.
+- `src/components` — UI components including listings, filters, search bar, pagination, and newsletter.
+- `src/resources` — Mock data and resource fetching logic.
+- `src/types` — TypeScript type definitions.
+- `src/utils` — Utility functions for formatting and normalization.
+- `src/assets` — Static assets like images, icons, and styles.
+- `public` — Dynamic data and static files served directly (e.g., JSON files, images).
+
+
+
+## Notes
+
+- Filtering, search, and pagination are all synchronized via URL search parameters.
+- React Suspense is used to provide a better loading experience in the listings section.
+- Newsletter subscription section implemented with basic UI
+
+### Scripts
+
+```bash
+npm run dev      # Run the development server
+npm run build    # Build for production
+npm run preview  # Preview production build
 ```
