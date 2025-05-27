@@ -44,7 +44,7 @@ export default function ListingCard({
         <p className="text-base text-black font-semibold tracking-wide max-w-[30ch]">
           {title}
         </p>
-        <button className="text-sm sm:text-base w-fit py-1.5 px-2 sm:px-3.25 sm:py-2.5 flex items-center gap-3 text-white bg-accent rounded-lg group cursor-pointer">
+        <button className="text-sm sm:text-base w-fit px-3.25 py-2.5 flex items-center gap-3 text-white bg-accent rounded-lg group cursor-pointer">
           View{" "}
           <ArrowRight className="size-4 sm:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-1.5" />
         </button>
