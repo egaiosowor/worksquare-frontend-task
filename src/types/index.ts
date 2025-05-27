@@ -8,3 +8,5 @@ export type Listing = {
   status: string[];
   image: string;
 };
+
+export type ListingFilter = "buy" | "rent" | "lease" | "all";
