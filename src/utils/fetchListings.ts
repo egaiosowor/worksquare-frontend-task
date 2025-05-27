@@ -5,6 +5,6 @@ export function fetchListings() {
         .then((res) => res.json())
         .then(resolve)
         .catch(reject);
-    }, 1500);
+    }, 2000);
   });
 }
