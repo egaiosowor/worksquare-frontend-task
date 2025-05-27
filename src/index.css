@@ -9,6 +9,8 @@
   --font-espuma: Espuma, "sans-serif";
   --font-inter: Inter, sans-serif;
   --color-accent: oklch(0.5873 0.191688 254.743);
+  --color-primary: oklch(37.3% 0.034 259.733);
+  --color-secondary: oklch(55.1% 0.027 264.364);
 }
 
 .debug {

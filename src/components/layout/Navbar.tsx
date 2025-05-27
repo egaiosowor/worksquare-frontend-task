@@ -16,7 +16,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="py-4 sm sm:p-6 lg:px-8 relative w-full bg-no-repeat bg-cover bg-center bg-[url('/src/assets/media/hero-bg.png')]">
+    <header className="p-4 sm:p-6 lg:px-8 relative w-full bg-no-repeat bg-cover bg-center bg-[url('/src/assets/media/hero-bg.png')]">
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         {" "}
         <Logo />
@@ -29,9 +29,7 @@ export default function Navbar() {
                 <Link
                   to={item.path}
                   className={`text-lg transition-colors ease-in-out duration-200 ${
-                    isCurr
-                      ? "text-blue-600"
-                      : "text-gray-700 hover:text-blue-600"
+                    isCurr ? "text-accent" : "text-primary hover:text-accent"
                   }`}
                 >
                   {item.label}
@@ -65,7 +63,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-xl absolute top-full left-0 right-0 z-50 border-t border-gray-200">
+        <div className="md:hidden bg-white shadow-xl absolute top-full left-0 right-0 z-100 border-t border-gray-200">
           {" "}
           <div className="px-4 pt-4 pb-6 space-y-3">
             {NAV_ITEMS.map((item) => {
@@ -76,9 +74,7 @@ export default function Navbar() {
                   to={item.path}
                   onClick={closeMobileMenu}
                   className={`block py-2 px-3 rounded-md text-base font-medium transition-colors ease-in-out duration-200 ${
-                    isCurr
-                      ? "bg-blue-50 text-blue-700"
-                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    isCurr ? "bg-blue-50 text-accent" : "text-primary"
                   }`}
                 >
                   {item.label}
